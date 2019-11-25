@@ -310,13 +310,13 @@ gulp.task('serviceworker', () => {
 
 // Moving files
 gulp.task('move-files', () => {  
-  let cname = gulp.src(['assets/CNAME'])
-    .pipe(gulp.dest(path.join(dir.dist)));
+  // let cname = gulp.src(['assets/CNAME'])
+  //   .pipe(gulp.dest(path.join(dir.dist)));
   let data = gulp.src(['data/constituencies.json'])
     .pipe(gulp.dest(path.join(dir.dist, 'data')));
   let scripts = gulp.src(['assets/vendor/js.cookie.js'])
   .pipe(gulp.dest(path.join(dir.dist, 'scripts')));
-    return merge(cname, scripts);
+    return merge(data, scripts);
 });
 
 // Static Server + watching scss/html files
