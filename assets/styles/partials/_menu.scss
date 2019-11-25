@@ -1,0 +1,145 @@
+/**
+ * Navigation Menu Container
+ */
+
+//Menu
+.js {
+
+	//Hide menu if JS loads
+	[hidden] { display: none; }
+
+	.nav-menu {
+		height:100vh;
+		position: absolute;
+		left:0;
+		top:0;
+		z-index:998;
+		background-color:var(--highlight-dark);
+	}
+
+	//Overlay menu
+   .navigation-overlay {
+	   .nav-menu {
+
+		   width:100%;
+		   display: flex;
+		   align-items: center;
+		   text-align:center;
+		   display: inline;
+		
+		   &:not([hidden]) {
+			   display: block;
+			}
+			
+	   }
+   }
+
+   //Sidebar menu
+   .navigation-sidebar {
+	   .nav-menu {
+
+		   width:85%;
+
+		   &:not([hidden]) {
+			   display: block;
+			   pointer-events: all;
+		   }
+
+		   ul {
+			margin:0;
+			padding: 0;
+				li {
+					line-height: 2;
+				}
+		 	}
+
+	   } 
+  }
+}
+
+//No-js users
+.no-js {
+	[hidden] { display: block; }
+	.jw-masthead__container {}
+	.nav-toggle {display: none;}
+	.nav-menu, 
+	.nav-menu ul {padding:0;}
+	.nav-menu ul li {display: inline-block;width: auto;margin:0 1.5rem 0 0;font-size:2.2rem;line-height: 4.4rem;}
+	.nav-menu ul li>a {color:var(--text);}
+}
+
+.nav-menu {
+
+   width:100%;
+   margin:0;
+   padding:2rem;
+   
+   ul {
+	   margin:0 auto;
+   }
+   
+   li {
+	   display: block;
+	   width: 100%;
+	   font-size: 3rem;
+	   @media #{$large-up} {
+		   font-size: 4rem;
+	   }
+	   line-height: 1.5;
+	   > a {
+		   text-decoration: none;
+		   color:white;
+		   font-weight: bold;
+		   &:hover, &:focus {
+			   color:var(--highlight);
+		   }
+	   }
+   }
+}
+
+
+/**
+* Navigation Toggle
+*/
+.nav-toggle {
+
+	margin-top:0;
+	.🍔 {width:4.4rem;height:4.4rem;}
+	.🚫 {width:4.4rem;height:4.4rem;fill:white;display: none;}
+
+	&[aria\-expanded=true] {
+		.🍔 {display: none;}
+		.🚫 {
+			//Make close icon appear in menu
+			display: block;
+			position: absolute;
+			//Offset menu width + a little extra
+			left: calc(85% - 5.4rem);
+			z-index: 9999;
+		}
+	}
+
+}
+
+/* Only stick if you can fit */
+@media (min-height: 300px) {
+	.jw-masthead {
+	  position: sticky;
+	  top: 0;
+	  z-index:99;
+	}
+}
+
+
+/**
+* Clearfix
+*/
+.nav-wrap:before,
+.nav-wrap:after {
+	display: table;
+	content: "";
+}
+
+.nav-wrap:after {
+	clear: both;
+}

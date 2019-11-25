@@ -1,0 +1,100 @@
+{% set body_class = "jw-about" %}
+{% set page_title = "Cookie Settings" %}
+
+{% extends "layout/_layout.njk" %}
+
+{% block content %}
+<div class="jw-content__inner">
+    <h1>Cookie Policy</h1>
+
+    <noscript>
+    <div class="alert">    
+    Sorry! This page needs JavaScript to be enabled in order to work properly. Please enable JavaScript and refresh the page. If you have disabled JavaScript as a preference, then only the cookies essential for the running of the site will be set (see 'Essential necessary cookies' below). 
+    </div>
+    </noscript>
+
+    <p>We use cookies to help improve your experience of {{ siteUrl }}. This cookie policy is part of {{ companyName }} <a href="./privacy.html">privacy policy</a>, and covers the use of cookies between your device and our site. We also provide basic information on third-party services we may use, who may also use cookies as part of their service, though they are not covered by our policy.</p>
+
+    <h3>Cookie settings</h3>    
+    <p>We use 3 types of cookie. You can choose which cookies you're happy for us to use.</p>
+
+    <form method="GET" data-form="cookie-settings">
+    <h2>Essential cookies</h2>
+    <p>Essential cookies are crucial to your experience of a website, enabling core features like user logins, account management, shopping carts and payment processing. We use essential cookies to enable certain functions on our website.</p>
+    <p>They always need to be on.</p>
+                                
+    <hr />
+
+    <h2>Cookies that measure website use</h2>  
+    <p>Similar to most websites, we use analytics to improve user experience and {{ siteUrl | replace("https://", "") | upper }}’s functionality. We use external services, including but not limited to Google Analytics, to provide real-time reporting of, among other things, your use and navigation of {{ siteUrl | replace("https://", "") | upper }} such as</p>
+    <ul>
+ 	    <li>how you got to the site</li>
+ 	    <li>the pages you visit on {{ siteUrl | replace("https://", "") | upper }} and how long you spend on each page</li>
+ 	    <li>what you click on while you’re visiting the site</li>
+    </ul>
+    <div class="cookies-radios">
+        <div class="cookies-radio">
+            <label for="radio-cookie__analytics-on" class="cookies-label cookies-radios__label">
+            <input type="radio" name="cookies-analytics" id="radio-cookie__analytics-on" value="true" class="cookies-radios__input" data-cookie="analytics">        
+            {# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 424c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-secondary"/><path d="M256 432c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-primary"/></svg> #}
+            <span title="On">On</span>
+            </label>
+        </div>
+        <div class="cookies-radio">
+            <label for="radio-cookie__analytics-off" class="cookies-label cookies-radios__label">
+            <input type="radio" name="cookies-analytics" id="radio-cookie__analytics-off" value="false" class="cookies-radios__input" data-cookie="analytics">        
+            {# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 424c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-secondary"/><path d="M256 432c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-primary"/></svg> #}
+            <span title="Off">Off</span>
+            </label>
+        </div>
+    </div>
+
+    <hr />
+
+    <h2>Cookies that help with our communications and marketing</h2>
+    <p>These cookies may be set by third party websites like Facebook and YouTube and and do things like measure how you view videos that are on {{ siteUrl | replace("https://", "") | upper }}.</p>
+    <div class="cookies-radios">
+        <div class="cookies-radio">
+            <label for="radio-cookie__marketing-on" class="cookies-label cookies-radios__label">
+            <input type="radio" name="cookies-marketing" id="radio-cookie__marketing-on" value="true" class="cookies-radios__input" data-cookie="marketing">        
+            {# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 424c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-secondary"/><path d="M256 432c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-primary"/></svg> #}
+            <span title="On">On</span>
+            </label>
+        </div>
+        <div class="cookies-radio">
+            <label for="radio-cookie__marketing-off" class="cookies-label cookies-radios__label">
+            <input type="radio" name="cookies-marketing" id="radio-cookie__marketing-off" value="false" class="cookies-radios__input" data-cookie="marketing">        
+            {# <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 424c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-secondary"/><path d="M256 432c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-primary"/></svg> #}
+            <span title="Off">Off</span>
+            </label>
+        </div>
+    </div>
+
+    {# 
+    <hr />
+    <h2>Cookies that remember your settings</h2>
+    <div class="cookies-radios">
+        <div class="cookies-radio">
+            <label for="radio-cookie__settings-on" class="cookies-label cookies-radios__label">
+            <input type="radio" name="cookies-settings" id="radio-cookie__settings-on" value="true" class="cookies-radios__input" data-cookie="settings">        
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 424c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-secondary"/><path d="M256 432c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-primary"/></svg>
+            <span title="On">On</span>
+            </label>
+        </div>
+        <div class="cookies-radio">        
+            <label for="radio-cookie__settings-off" class="cookies-label cookies-radios__label">
+            <input type="radio" name="cookies-settings" id="radio-cookie__settings-off" value="false" class="cookies-radios__input" data-cookie="settings">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><style>.fa-secondary{opacity:.4}</style></defs><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 424c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-secondary"/><path d="M256 432c-97.06 0-176-79-176-176S158.94 80 256 80s176 79 176 176-78.94 176-176 176z" class="fa-primary"/></svg>
+            <span title="Off">Off</span>
+            </label>
+        </div>
+    </div>
+    #}
+
+    <hr />
+    
+    <button class="button" type="submit">Save changes</button>
+        
+    </form>
+</div>
+{% endblock %} 

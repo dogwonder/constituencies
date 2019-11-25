@@ -1,0 +1,30 @@
+dialog::backdrop {
+    backdrop-filter: blur(3px);
+}
+
+.block--modal {
+    justify-content: center;
+}
+
+.modal {
+    position: relative;
+    z-index: 998;
+    position: absolute;
+    top:2rem;
+    max-width: 90%;
+    @media #{$large-up} {
+        max-width: 70ch;
+        top:10vh;
+    }
+
+    .modal__close {
+        font-size: 4.4rem;
+        border:0;
+        -webkit-appearance: none;
+        appearance: none;
+        position: absolute;
+        top:1rem;
+        right:1rem;
+    }
+
+}

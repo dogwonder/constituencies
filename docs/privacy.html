@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Constiuency finder</title>
+    <meta name="description" content="Find data about your constiuency" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.9/jquery.autocomplete.js" integrity="sha384-eLQ7KKJ6W0gEOT57aZs0ADX6Wjdz0QEvkm8UsytG7G3IkJbSm6ovnpSeCpTsmV6u" crossorigin="anonymous"></script>
+    <script src="./scripts/js.cookie.js"></script>
+    <script>
+        (function() {
+            //Set up our 🍪 vars
+            let cookies_vars = {
+                "essential": true,
+                "analytics": true,
+                "marketing": true
+            };
+            //If the 🍪 not set, set it 
+            let hasCookie = Cookies.get('jw_cookie_policy');
+            if (!hasCookie) {
+                Cookies.set('jw_cookie_policy', cookies_vars, {
+                    expires: 365,
+                    path: ''
+                });
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.159.0">
+
+    <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="./images/fav/apple-touch-icon.png" />
+    <link rel="manifest" href="./images/fav/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Constiuency finder" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="msapplication-TileColor" content="#14d5de">
+    <meta name="theme-color" content="#14d5de">
+    <meta property="og:url" content="https://juckwonder.com" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="Constiuency finder">
+    <meta property="og:description" content="Find data about your constiuency">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://juckwonder.com/images/og/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dogwonder">
+    <meta name="twitter:title" content="Constiuency finder">
+    <meta name="twitter:description" content="Find data about your constiuency">
+    <meta name="twitter:image" content="https://juckwonder.com/images/og/og-image.png">
+    <meta property="twitter:url" content="https://juckwonder.com" />
+    <script type='application/ld+json'>
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://juckwonder.com#website",
+            "url": "https://juckwonder.com",
+            "name": "Dogwonder Ltd",
+            "logo": "https://juckwonder.com/images/og/logo-160x60.png"
+        }
+    </script>
+    <script>
+        //Get the 🍪
+        let getCookie = Cookies.getJSON('jw_cookie_policy');
+        //If analytics 🍪 is set to true (default) then load our analytics otheriwse don't load at all
+        if (getCookie.analytics === true) {
+            (function(w, d, s, o, f, js, fjs) {
+                w[o] = w[o] || function() {
+                    (w[o].q = w[o].q || []).push(arguments)
+                };
+                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+                js.id = o;
+                js.src = f;
+                js.async = 1;
+                fjs.parentNode.insertBefore(js, fjs);
+            }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
+            plausible('page')
+        }
+    </script>
+</head>
+
+<body class="has-cookie jw jw-about" data-theme="default">
+    <div id="cookieNotice" class="cookie-notice open" role="region">
+        <p class="cookie-notice__text">We use cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
+        </p>
+        <p class="cookie-notice__accept"><button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept cookies">Accept cookies</button></p>
+        <p class="cookie-notice__change"><a href="./cookies.html" class="cookieButton accept" type="button" aria-label="Change settings">Change settings</a></p>
+    </div>
+    <div class="jw-wrapper">
+        <header class="jw-masthead">
+            <div class="jw-masthead__container">
+
+                <div class="jw-masthead__logo">
+                    <a href="./">
+                        <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 94" x="0px" y="0px">
+                            <path fill="#000000" fill-rule="evenodd" d="M511.346436,1112.59381 L508.914384,1112.59381 L507.749721,1114.69818 L504.153006,1112.59381 L500.084271,1110.65458 L497.146823,1112.59381 L495.139979,1108.67028 L501.871359,1105.90317 L503.243208,1102.72256 L501.871359,1098.63519 L498.353097,1099.89044 L500.788183,1096.74147 L498.93001,1094.83692 L500.084271,1093.12612 L504.734687,1094.83692 L509.56585,1092.55354 L508.914384,1088.7037 L510.844835,1087.06493 L510.489952,1085.32414 L507.850041,1086.22097 L505.853644,1081.29296 L507.649401,1078.02263 L505.853644,1078.02263 C505.107673,1078.02263 504.237527,1078.34487 503.243208,1078.98936 L500.788183,1079.56497 L496.544902,1077.82199 L497.247143,1073.8216 L499.130651,1070.98649 L497.146823,1067.70985 L495.139979,1065.62846 L493.938474,1072.71483 L491.579673,1072.71483 L492.739135,1067.70985 L492.739135,1064.73036 L494.038794,1063.08189 L492.939775,1061.7466 L495.139979,1058.051 L491.579673,1061.7466 L488.490954,1061.7466 L489.86237,1059.98936 L488.490954,1058.051 L490.610582,1056.91052 L491.579673,1055.06977 L490.610582,1053.09414 L485.741188,1049.14633 L488.490954,1045.70435 L491.278713,1050.62704 L492.739135,1049.85674 L491.579673,1047.0684 L491.579673,1044.05857 L495.935348,1042.54498 L495.139979,1040.90917 L497.146823,1034.6069 L501.871359,1035.51067 L508.914384,1034.00138 L509.56585,1037.34063 L503.243208,1042.54498 L502.640288,1047.0684 L507.749721,1045.30307 L516.198404,1045.70435 L517.702259,1048.19087 L515.51443,1051.61002 L512.68231,1058.67039 L510.844835,1059.98936 L512.067687,1061.7466 L507.749721,1064.14781 L508.251322,1065.92942 L512.368647,1064.64942 L516.198404,1066.94006 L517.702259,1069.45707 L520.953281,1079.56497 L525.15595,1082.20161 L527.974634,1086.22097 L529.645993,1090.66026 L530.892576,1096.08047 L529.081649,1098.63519 L530.892576,1099.89044 L532.188183,1098.13359 L537.519929,1098.63519 L540.29787,1102.0945 L538.284957,1107.5819 L532.188183,1113.43859 L534.645331,1114.69818 L537.62025,1114.2969 L537.62025,1117.01493 L530.331267,1120.75728 L526.129898,1119.89517 L523.483291,1120.75728 L520.25717,1119.89517 L518.502157,1121.30106 L513.697868,1121.96313 L510.489952,1120.75728 L507.34844,1122.16377 L505.853644,1126.31447 L500.084271,1124.78051 L496.544902,1127.90434 L491.579673,1127.11937 L495.139979,1124.78051 L500.084271,1119.89517 L500.084271,1118.07384 L502.640288,1115.66259 L508.963929,1115.96355 L511.346436,1112.59381 Z M482.901265,1075.30075 L488.203148,1073.65367 L490.353461,1073.65367 L492.656347,1078.2447 L494.481578,1082.36848 L492.656347,1085.52829 L490.353461,1086.81128 L488.992382,1085.82925 L486.695392,1086.81128 L485.47462,1083.65278 L484.106239,1082.9376 L482.901265,1085.82925 L479.99676,1085.52829 L477.094421,1082.36848 L478.943492,1080.03183 L482.901265,1075.30075 Z" transform="translate(-477 -1034)"></path>
+                        </svg>
+                        <span class="sr-only">Go to the homepage</span>
+                    </a>
+                </div>
+                <nav id="site-navigation" class="nav-collapse jw-masthead__nav navigation-sidebar">
+                    <a class="skip-link sr-only" href="#content">Skip to content</a>
+                    <a id="nav-toggle" class="nav-toggle" href="#">
+                        <svg class="🍔" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" /></svg>
+                        <svg class="🚫" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z" />
+                            <span class="sr-only">Toggle menu</span>
+                    </a>
+                    <div id="nav-menu" class="nav-menu" hidden>
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li><a href="./about.html">About</a></li>
+                        </ul>
+                    </div><!-- #nav-menu -->
+                </nav><!-- #site-navigation -->
+            </div>
+        </header>
+        <main id="content" class="jw-container">
+            <div class="jw-content">
+
+                <div class="jw-content__inner">
+                    <h2>Privacy Policy</h2>
+                    <p>Your privacy is important to us. It is Dogwonder Ltd's policy to respect your privacy regarding any information we may collect from you across our website, <a href="https://juckwonder.com">JUCKWONDER.COM</a>, and other sites we own and operate.</p>
+                    <h3>1. Information we collect</h3>
+                    <h4>Log data</h4>
+                    <p>When you visit our website, our servers may automatically log the standard data provided by your web browser. It may include your computer’s Internet Protocol (IP) address, your browser type and version, the pages you visit, the time and date of your visit, the time spent on each page, and other details.</p>
+                    <h4>Device data</h4>
+                    <p>We may also collect data about the device you’re using to access our website. This data may include the device type, operating system, unique device identifiers, device settings, and geo-location data. What we collect can depend on the individual settings of your device and software. We recommend checking the policies of your device manufacturer or software provider to learn what information they make available to us.</p>
+                    <h4>Personal information</h4>
+                    <p>We may ask for personal information, such as your:</p>
+                    <ul>
+                        <li>Name</li>
+                        <li>Email</li>
+                        <li>Phone/mobile number</li>
+                    </ul>
+                    <h3>2. Legal bases for processing</h3>
+                    <p>We will process your personal information lawfully, fairly and in a transparent manner. We collect and process information about you only where we have legal bases for doing so.</p>
+                    <p>These legal bases depend on the services you use and how you use them, meaning we collect and use your information only where:</p>
+                    <ul>
+                        <li>it’s necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract (for example, when we provide a service you request from us);</li>
+                        <li>it satisfies a legitimate interest (which is not overridden by your data protection interests), such as for research and development, to market and promote our services, and to protect our legal rights and interests;</li>
+                        <li>you give us consent to do so for a specific purpose (for example, you might consent to us sending you our newsletter); or</li>
+                        <li>we need to process your data to comply with a legal obligation.</li>
+                    </ul>
+                    <p>Where you consent to our use of information about you for a specific purpose, you have the right to change your mind at any time (but this will not affect any processing that has already taken place).</p>
+                    <p>We don’t keep personal information for longer than is necessary. While we retain this information, we will protect it within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification. That said, we advise that no method of electronic transmission or storage is 100% secure and cannot guarantee absolute data security. If necessary, we may retain your personal information for our compliance with a legal obligation or in order to protect your vital interests or the vital interests of another natural person.</p>
+                    <h3>3. Collection and use of information</h3>
+                    <p>We may collect, hold, use and disclose information for the following purposes and personal information will not be further processed in a manner that is incompatible with these purposes:</p>
+                    <ul>
+                        <li>to contact and communicate with you; and</li>
+                        <li>for internal record keeping and administrative purposes.</li>
+                    </ul>
+                    <h3>4. Disclosure of personal information to third parties</h3>
+                    <p>We may disclose personal information to:</p>
+                    <ul>
+                        <li>third party service providers for the purpose of enabling them to provide their services, including (without limitation) IT service providers, data storage, hosting and server providers, ad networks, analytics, error loggers, debt collectors, maintenance or problem-solving providers, marketing or advertising providers, professional advisors and payment systems operators.</li>
+                    </ul>
+                    <h3>5. International transfers of personal information</h3>
+                    <p>The personal information we collect is stored and processed in United Kingdom, or where we or our partners, affiliates and third-party providers maintain facilities. By providing us with your personal information, you consent to the disclosure to these overseas third parties.</p>
+                    <p>We will ensure that any transfer of personal information from countries in the European Economic Area (EEA) to countries outside the EEA will be protected by appropriate safeguards, for example by using standard data protection clauses approved by the European Commission, or the use of binding corporate rules or other legally accepted means.</p>
+                    <p>Where we transfer personal information from a non-EEA country to another country, you acknowledge that third parties in other jurisdictions may not be subject to similar data protection laws to the ones in our jurisdiction. There are risks if any such third party engages in any act or practice that would contravene the data privacy laws in our jurisdiction and this might mean that you will not be able to seek redress under our jurisdiction’s privacy laws.</p>
+                    <h3>6. Your rights and controlling your personal information</h3>
+                    <p><strong>Choice and consent:</strong> By providing personal information to us, you consent to us collecting, holding, using and disclosing your personal information in accordance with this privacy policy. If you are under 16 years of age, you must have, and warrant to the extent permitted by law to us, that you have your parent or legal guardian’s permission to access and use the website and they (your parents or guardian) have consented to you providing us with your personal information. You do not have to provide personal information to us, however, if you do not, it may affect your use of this website or the products and/or services offered on or through it.</p>
+                    <p><strong>Information from third parties:</strong> If we receive personal information about you from a third party, we will protect it as set out in this privacy policy. If you are a third party providing personal information about somebody else, you represent and warrant that you have such person’s consent to provide the personal information to us.</p>
+                    <p><strong>Restrict:</strong> You may choose to restrict the collection or use of your personal information. If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by contacting us using the details below. If you ask us to restrict or limit how we process your personal information, we will let you know how the restriction affects your use of our website or products and services.</p>
+                    <p><strong>Access and data portability:</strong> You may request details of the personal information that we hold about you. You may request a copy of the personal information we hold about you. Where possible, we will provide this information in CSV format or other easily readable machine format. You may request that we erase the personal information we hold about you at any time. You may also request that we transfer this personal information to another third party.</p>
+                    <p><strong>Correction:</strong> If you believe that any information we hold about you is inaccurate, out of date, incomplete, irrelevant or misleading, please contact us using the details below. We will take reasonable steps to correct any information found to be inaccurate, incomplete, misleading or out of date.</p>
+                    <p><strong>Notification of data breaches:</strong> We will comply laws applicable to us in respect of any data breach.</p>
+                    <p><strong>Complaints:</strong> If you believe that we have breached a relevant data protection law and wish to make a complaint, please contact us using the details below and provide us with full details of the alleged breach. We will promptly investigate your complaint and respond to you, in writing, setting out the outcome of our investigation and the steps we will take to deal with your complaint. You also have the right to contact a regulatory body or data protection authority in relation to your complaint.</p>
+                    <p><strong>Unsubscribe:</strong> To unsubscribe from our e-mail database or opt-out of communications (including marketing communications), please contact us using the details below or opt-out using the opt-out facilities provided in the communication.</p>
+                    <h3>7. Cookies</h3>
+                    <p>We use “cookies” to collect information about you and your activity across our site. A cookie is a small piece of data that our website stores on your computer, and accesses each time you visit, so we can understand how you use our site. This helps us serve you content based on preferences you have specified. Please refer to our Cookie Policy for more information.</p>
+                    <h3>8. Limits of our policy</h3>
+                    <p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and policies of those sites, and cannot accept responsibility or liability for their respective privacy practices.</p>
+                    <h3>9. Changes to this policy</h3>
+                    <p>At our discretion, we may change our privacy policy to reflect current acceptable practices. We will take reasonable steps to let users know about changes via our website. Your continued use of this site after any changes to this policy will be regarded as acceptance of our practices around privacy and personal information. </p>
+                    <p>If we make a significant change to this privacy policy, for example changing a lawful basis on which we process your personal information, we will ask you to re-consent to the amended privacy policy.</p>
+                    <p><strong>Dogwonder Ltd Data Controller</strong><br />
+                        Rich Holman<br />
+                        dogwonder@gmail.com</p>
+                    <p>This policy is effective as of 25 September 2019.</p>
+                </div>
+
+            </div>
+        </main>
+        <!--/.container-->
+        <footer id="footer" class="jw-footer">
+            <p>© Copyright 2019 <br />
+                <a href="./privacy.html" aria-label="Read this site's Privacy policy">Privacy policy</a> | <a href="./cookies.html" aria-label="Read this site's Cookie policy">Cookie policy</a> | <a href="./terms.html" aria-label="Read this site's Terms of Service">Terms of Service</a>
+            </p>
+            <svg width="0" height="0">
+                <radialGradient id="rg" r="150%" cx="30%" cy="107%">
+                    <stop stop-color="#fdf497" offset="0" />
+                    <stop stop-color="#fdf497" offset="0.05" />
+                    <stop stop-color="#fd5949" offset="0.45" />
+                    <stop stop-color="#d6249f" offset="0.6" />
+                    <stop stop-color="#285AEB" offset="0.9" />
+                </radialGradient>
+            </svg>
+        </footer>
+    </div>
+    <!--/.wrapper-->
+    <script src="./scripts/app.js"></script>
+    <script>
+        // This is the service worker with the combined offline experience (Cache-first network) - https://preview.pwabuilder.com/serviceworker
+        if ("serviceWorker" in navigator) {
+            if (navigator.serviceWorker.controller) {
+                //console.log("active service worker found, no need to register");
+            } else {
+                // Register the service worker
+                navigator.serviceWorker
+                    .register("sw.js", {
+                        scope: "./"
+                    })
+                    .then(function(reg) {
+                        //console.log("Service worker has been registered for scope: " + reg.scope);
+                    });
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

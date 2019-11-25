@@ -1,0 +1,110 @@
+.cookie-notice {
+    color: var(--highlight-dark);
+    background-color: #ECF3F7;
+    border:0;
+    border-bottom: 2px solid #BCDFF1;
+    @media #{$large-up} {
+        padding: 0.6rem;
+    }
+    display: none;
+    text-align: center;
+    p {margin:0;font-size: 1.4rem;line-height: 1.2;}
+    a {color: var(--highlight-dark);}
+    .cookieButton {
+        font-size:1.2rem;
+        font-weight: bold;
+        display: inline-block;
+        background-color: transparent;
+        border: 2px solid var(--highlight-dark);
+        -webkit-appearance: none;
+        padding: 0.1rem 0.8rem;
+        margin:0.5rem 0 0 0.5rem;
+        @media #{$large-up} {
+            margin:0 0 0 0.5rem;
+        }
+        color: inherit;
+        text-decoration: none;
+        box-shadow: none;
+        &:focus, 
+        &:hover {
+            background-color: var(--highlight-dark);
+            color:white;
+            cursor: pointer;
+        }
+    }
+}
+
+.cookie-notice.open {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    @media #{$small-only} {
+        flex-direction: column;
+        .cookieButton {
+            border:0;
+            margin:0;
+            display: block;
+            padding:1rem;
+            width: 100%;
+            background-color: var(--highlight);
+            color:white;
+        }
+        .cookie-notice__text {
+            padding: 1rem;   
+        }
+        .cookie-notice__accept {
+            
+        }
+        .cookie-notice__change {
+            > a {background-color: var(--highlight-dark);}
+        }
+    }
+}
+
+
+//Cookie settings page
+[data-form="cookie-settings"] {    
+
+    .cookies-radios {
+        padding:2rem 0;
+        display:flex;
+    }
+    .cookies-radio {
+        margin:0 2rem 0 0;
+    }
+
+    label {
+        font-size:2rem;
+        font-weight:bold;
+        display:flex;
+        align-items: center;
+    }
+
+    input[type="radio"] {
+        vertical-align: middle;
+        display:inline-block;
+        margin:0 0.7rem 0 0;
+    }
+
+    // IF using SVGs but not here as fails tests
+    // svg {
+    //     width:3rem;
+    //     height:3rem;
+    //     display:inline-block;
+    //     margin:0 1rem 0 0;
+    // }
+    // input[type="radio"] {
+    //     opacity: 0;
+    //     width: 0;
+    //     height: 0;
+    // }
+    // input[type="radio"] ~ svg .fa-primary {
+    //     opacity: 0;  
+    // }
+    // input[type="radio"]:active ~ svg .fa-primary {
+    // opacity: 1;
+    // }
+    // input[type="radio"]:checked ~ svg .fa-primary {
+    // opacity: 1;
+    // }
+}
